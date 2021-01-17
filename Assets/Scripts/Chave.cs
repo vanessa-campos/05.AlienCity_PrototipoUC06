@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dano : MonoBehaviour
+public class Chave : MonoBehaviour
 {
-    private PlayerController player;
+    Porta porta;
 
     private void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        porta = FindObjectOfType<Porta>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            player.Dano();
+            porta.Chaves -= 1;
             Destroy(gameObject);
         }
     }

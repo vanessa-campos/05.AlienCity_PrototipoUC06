@@ -13,11 +13,23 @@ public class PlayerController: MonoBehaviour
     Vector3 gravidade = Vector3.zero;
     private bool jump = false;
 
+    //public Text pontosText;
+
+    private int pontos = 0;
+    public int Pontos
+    {
+        get { return pontos; }
+        set { pontos = value;
+            //pontosText.text = "PONTUAÇÃO: " + pontos;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
+        pontos = 0;
     }
 
     // Update is called once per frame
@@ -67,10 +79,5 @@ public class PlayerController: MonoBehaviour
                 _animator.SetTrigger("Corre");
             }
         }
-    }
-
-    public void Dano()
-    {
-        Vida -= 10;
     }
 }
