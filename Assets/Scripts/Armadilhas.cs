@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Armadilhas : MonoBehaviour
 {
-    PlayerController player;
     public int dano;
+    PlayerController player;
 
     private void Start()
     {
@@ -13,7 +13,7 @@ public class Armadilhas : MonoBehaviour
 
     public void Dano()
     {
-        player.Vida -= dano;
-        Debug.Log(player.Vida);
+        player.Energia -= dano;
+        player.barraVida.value -= dano * .01f;
     }
 }

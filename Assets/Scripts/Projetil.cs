@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projetil: MonoBehaviour
+public class Projetil : MonoBehaviour
 {
     public float Speed = 2f;
     GameObject target;
-    Quebravel qb;
+    Quebravel qb; 
 
     private void Awake()
     {
@@ -16,7 +16,7 @@ public class Projetil: MonoBehaviour
 
     private void Start()
     {
-        transform.rotation = target.transform.rotation; 
+        transform.rotation = target.transform.rotation;
         Vector3 dir = target.transform.position - transform.position;
         GetComponent<Rigidbody>().velocity = dir * Speed;
         Destroy(gameObject, 3);
@@ -27,9 +27,8 @@ public class Projetil: MonoBehaviour
         if (other.gameObject.CompareTag("Quebravel"))
         {
             qb.resistencia -= 1;
-            Debug.Log(other.name);
             Debug.Log(qb.resistencia);
-            Destroy(gameObject);
+            Destroy(gameObject, .5f);
         }
     }
 }

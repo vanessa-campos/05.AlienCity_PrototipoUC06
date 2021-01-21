@@ -1,18 +1,25 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Porta : MonoBehaviour
 {
-    public int Chaves = 2;
+    public int chaves;
+    public GameManager GM;
+
+    private void Start()
+    {
+        chaves = GameObject.FindGameObjectsWithTag("Chave").Length;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Chaves <= 0)
+            if (chaves <= 0)
             {
+                PlayerPrefs.SetInt("PPAberto", 1);
                 gameObject.SetActive(false);
+                GM.Invoke("Fim", 3);
             }
         }
     }

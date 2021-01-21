@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: c11798344c6ae6347a74db67283634a0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - panelMenu: {instanceID: 0}
+  - panelCreditos: {instanceID: 0}
+  - panelLevelCompleted: {instanceID: 0}
+  - panelGameOver: {instanceID: 0}
+  - porta: {instanceID: 0}
+  - player: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

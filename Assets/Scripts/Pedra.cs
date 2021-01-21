@@ -5,10 +5,12 @@ using UnityEngine;
 public class Pedra : MonoBehaviour
 {
     PlayerController player;
+    Interface hud;
 
     private void Start()
     {
         player = FindObjectOfType<PlayerController>();
+        hud = FindObjectOfType<Interface>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -16,7 +18,7 @@ public class Pedra : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             player.Pontos += 20;
-            Debug.Log(player.Pontos);
+            hud.Pedras += 1;
             Destroy(gameObject);
         }
     }
