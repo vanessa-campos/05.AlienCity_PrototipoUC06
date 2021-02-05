@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2006224143769269460}
   - component: {fileID: 8876127944559619178}
-  - component: {fileID: 2309031466013011932}
   - component: {fileID: -844085027377168241}
   m_Layer: 0
   m_Name: Armadilha esmaga
@@ -48,19 +47,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 3, z: 8}
   m_Center: {x: 8.5, y: -1.5, z: 0}
---- !u!114 &2309031466013011932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883770763693347377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d03c8e1e17c7d5d499b44adca5d7ff5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dano: 10
 --- !u!114 &-844085027377168241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c3b2e4c21507b42b892a89ec82deae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dano: 10
+  ativada: 0
   paredeEsq: {fileID: 6019374895008769212}
   paredeDir: {fileID: 6019374895632954897}
 --- !u!1001 &6019374895008382524

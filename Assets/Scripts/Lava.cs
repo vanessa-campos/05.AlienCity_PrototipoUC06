@@ -1,27 +1,20 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Lava : MonoBehaviour
+public class Lava : Armadilhas
 {
-    Armadilhas armadilha;
-    bool tocando = false;
     float time = 0;
     int x = 0;
 
-    private void Start()
-    {
-        armadilha = GetComponent<Armadilhas>();
-    }
-
     private void Update()
     {
-        if (tocando)
+        if (ativada)
         {
             if (time > 0)
             {
                 if ((x % 60) == 0)
                 {
-                    armadilha.Dano();
+                    Dano();
                 }
             }
             time += Time.deltaTime;
@@ -29,19 +22,11 @@ public class Lava : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            tocando = true;
-        }
-    }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            tocando = false;
+            ativada = false;
             time = 0;
             x = 0;
         }

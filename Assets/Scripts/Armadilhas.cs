@@ -4,11 +4,20 @@ using UnityEngine;
 public class Armadilhas : MonoBehaviour
 {
     public int dano;
+    public bool ativada = false;
     PlayerController player;
 
-    private void Start()
+    private void Awake()
     {
         player = FindObjectOfType<PlayerController>();
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            ativada = true;
+        }
     }
 
     public void Dano()

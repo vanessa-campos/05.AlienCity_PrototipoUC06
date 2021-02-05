@@ -832,6 +832,7 @@ GameObject:
   - component: {fileID: 472602624}
   - component: {fileID: 1750702520}
   - component: {fileID: 1750702521}
+  - component: {fileID: 481962945}
   m_Layer: 0
   m_Name: Porta
   m_TagString: Untagged
@@ -839,6 +840,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &481962945
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481962944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 32.25, y: 1.2, z: 32.4}
+  m_Center: {x: 0, y: 0, z: 16.2}
 --- !u!4 &482195424
 Transform:
   m_ObjectHideFlags: 0
@@ -5752,8 +5766,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1515268684}
     m_Modifications:
-    - target: {fileID: 377009122255142732, guid: 01ad3473a6397a84299c21f98b16b46e,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: dano
       value: 1
       objectReference: {fileID: 0}

@@ -3,30 +3,28 @@ using System.Collections;
 
 namespace Assets.Scripts
 {
-    public class Espinhos : MonoBehaviour
+    public class Espinhos : Armadilhas
     {
         public Transform chaoEsq;
         public Transform chaoDir;
-        Armadilhas armadilha;
         bool aberto;
-        bool tocando = false;
         float time = 0;
         int x = 0;
 
         private void Start()
         {
-            armadilha = GetComponent<Armadilhas>();
             Invoke("Abrir", 3);
         }
+        
         private void Update()
         {
-            if (tocando && aberto)
+            if (ativada && aberto)
             {
                 if (time > 0)
                 {
                     if ((x % 180) == 0)
                     {
-                        armadilha.Dano();
+                        Dano();
                     }
                 }
                 time += Time.deltaTime;
@@ -34,19 +32,11 @@ namespace Assets.Scripts
             }
         }
 
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.tag == "Player")
-            {
-                tocando = true;
-            }
-        }
-
         private void OnTriggerExit(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                tocando = false;
+                ativada = false;
                 time = 0;
                 x = 0;
             }

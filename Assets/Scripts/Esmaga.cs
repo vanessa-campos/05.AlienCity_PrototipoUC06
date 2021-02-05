@@ -3,16 +3,10 @@ using System.Collections;
 
 namespace Assets.Scripts
 {
-    public class Esmaga : MonoBehaviour
+    public class Esmaga : Armadilhas
     {
         public Transform paredeEsq;
         public Transform paredeDir;
-        Armadilhas armadilha;
-
-        private void Start()
-        {
-            armadilha = GetComponent<Armadilhas>();
-        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -20,7 +14,7 @@ namespace Assets.Scripts
             {
                 paredeEsq.Translate(5, 0, 0);
                 paredeDir.Translate(5, 0, 0);
-                armadilha.Dano();
+                Dano();
                 Invoke("Retornar", 1.5f);
             }
         }
